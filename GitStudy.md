@@ -51,9 +51,26 @@ git checkout — file 	放弃工作区中对file文件的修改,不论暂存区�
 
 git reset HEAD file 	放弃暂存区的内容(即放弃上一次add的内容)，退回到工作区，此时的工作区并不是最新版本，而是在最新版本的基础上用户修改过的内容
 
+### 关联远程仓库
+
+已github为例，假设有两种情况：
+
+1.本地已有git仓库或项目文件，想在github进行关联
+
+- 在github新建项目，不要勾选`Initialize this repository with a README`，默认创建即可
+- 关联github，在本地仓库终端输入`git remote add origin git@github.com:dwfrost/GitStudy.git `,注意origin后的内容(SSH)可以从github上复制
+- 推送内容到github `git push -u origin master`
+
+2.本地是空文件，想从已有的github项目克隆
+
+- 打开github项目，复制SSH
+- 在本地仓库终端输入`git clone git@github.com:dwfrost/GitStudy.git`
+
 ### 分支管理
 
 ## 远程仓库
+
+### 关联SSH
 
 常见的远程仓库有github,码云等，为了方便本地和远程提交代码，需要配置SSH加密，如下：
 
