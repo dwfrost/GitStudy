@@ -19,7 +19,7 @@
 
 - Xcode安装git
 
-> Xcode7.0后的版本默认安装了git，在终端直接输入git，看是否安装。
+> Xcode7.0后的版本默认安装了git，在终端直接输入git，看是否已安装。
 
 ### Windows
 
@@ -77,6 +77,8 @@ git reset HEAD file 	放弃暂存区的内容(即放弃上一次add的内容)，
 #### 切换
 
 `git checkout dev`		切到dev分支
+
+`git checkout -b dev`	创建并切换到dev分支
 
 #### 合并
 
