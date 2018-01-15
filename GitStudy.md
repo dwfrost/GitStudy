@@ -27,6 +27,8 @@
 
 ##命令
 
+### 创建版本库
+
 git init    创建仓库
 
 git add file	添加到git中（但没有提及到本地，只是放入暂存区）
@@ -37,6 +39,8 @@ git log	打印提交日志
 
 git log —oneline	打印提及日志的简写版
 
+### 版本管理
+
 git reset —hard HEAD^	回滚到上一个版本（HEAD代表当前版本，HEAD^代表上一个版本，HEAD^^代表上两个版本，依次类推）
 
 git reflog	查看用户所有的提交记录
@@ -46,6 +50,30 @@ git reset —hard 1231234（提交id）回滚到1231234的提交版本
 git checkout — file 	放弃工作区中对file文件的修改,不论暂存区是否有该文件的修改记录，即该命令不会放弃暂存区的修改，**只放弃工作区的修改**
 
 git reset HEAD file 	放弃暂存区的内容(即放弃上一次add的内容)，退回到工作区，此时的工作区并不是最新版本，而是在最新版本的基础上用户修改过的内容
+
+### 分支管理
+
+## 远程仓库
+
+常见的远程仓库有github,码云等，为了方便本地和远程提交代码，需要配置SSH加密，如下：
+
+1.创建SSH key。
+
+创建前，看一下有没有。在用户目录下（mac），终端输入`ls -ah`查看隐藏文件，发现存在`.ssh`文件夹，`cd .ssh`->`open .`，看到存在`id_rsa`和`id_rsa.pub`两个文件，说明已经有了SSH key。
+
+如果没有，就需要创建。
+
+`$ ssh-keygen -t rsa -C "youremail@example.com"`
+
+一路回车，创建成功。
+
+2.添加公钥
+
+`id_rsa`:密钥是用户保管的
+
+`id_rsa.pub`:公钥是放在远程仓库，用于和密钥配对使用。
+
+复制`id_rsa.pub`文件中的内容，打开github，在账户管理选项中添加SSH key。
 
 ## 概念
 
