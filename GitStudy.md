@@ -4,6 +4,10 @@
 
 从头开始复习git，熟悉git常见指令，安装，操作等
 
+## 安装
+
+### Mac
+
 ##命令
 
 git init    创建仓库
@@ -24,7 +28,7 @@ git reset —hard 1231234（提交id）回滚到1231234的提交版本
 
 git checkout — file 	放弃工作区中对file文件的修改,不论暂存区是否有该文件的修改记录，即该命令不会放弃暂存区的修改，**只放弃工作区的修改**
 
-git reset HEAD file 	放弃暂存区的内容(即放弃上一次add的内容)，退回到工作区，此时的工作区并不是最新分支，而是在最新分支的基础上用户修改过的内容
+git reset HEAD file 	放弃暂存区的内容(即放弃上一次add的内容)，退回到工作区，此时的工作区并不是最新版本，而是在最新版本的基础上用户修改过的内容
 
 ## 概念
 
@@ -60,4 +64,3 @@ git reset HEAD file 	放弃暂存区的内容(即放弃上一次add的内容)，
 - 是否真的删除？
 - 是，`git commit -m 'delete file'`
 - 否，`git reset HEAD file` + `git checkout -- file`
-
