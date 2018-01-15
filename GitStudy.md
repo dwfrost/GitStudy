@@ -84,7 +84,7 @@ git reset HEAD file 	放弃暂存区的内容(即放弃上一次add的内容)，
 
 #### 删除
 
-`git branch -d dev`	删除dev分支
+`git branch -d dev`	删除dev分支(当前分支不能为dev)
 
 ## 远程仓库
 
