@@ -8,6 +8,23 @@
 
 ### Mac
 
+有两种方法
+
+- brew安装git
+
+
+> brew官网 https://brew.sh/
+>
+> brew使用教程 http://blog.csdn.net/andanlan/article/details/51589800
+
+- Xcode安装git
+
+> Xcode7.0后的版本默认安装了git，在终端直接输入git，看是否安装。
+
+### Windows
+
+> git官网 https://git-scm.com/book/zh/v1/%E8%B5%B7%E6%AD%A5-%E5%AE%89%E8%A3%85-Git
+
 ##命令
 
 git init    创建仓库
