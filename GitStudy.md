@@ -51,3 +51,13 @@ git reset HEAD file 	放弃暂存区的内容(即放弃上一次add的内容)，
 ```
 
 另外，如果暂存区存在文件，是不能直接`pull`分支的。
+
+## 举个栗子
+
+### 删除文件
+
+- `git rm file`	相当于 `rm file`，然后`git add file`
+- 是否真的删除？
+- 是，`git commit -m 'delete file'`
+- 否，`git reset HEAD file` + `git checkout -- file`
+
