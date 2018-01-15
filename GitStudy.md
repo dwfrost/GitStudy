@@ -68,6 +68,24 @@ git reset HEAD file 	放弃暂存区的内容(即放弃上一次add的内容)，
 
 ### 分支管理
 
+`git branch`	查看当前所在的分支
+
+#### 创建	
+
+`git branch dev`	创建dev分支
+
+#### 切换
+
+`git checkout dev`		切到dev分支
+
+#### 合并
+
+`git merge dev`	将dev分支合并到当前分支
+
+#### 删除
+
+`git branch -d dev`	删除dev分支
+
 ## 远程仓库
 
 ### 关联SSH
