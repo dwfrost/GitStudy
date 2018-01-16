@@ -24,3 +24,4 @@ new feature
 new plan
 
 newbranch from now
+try to new a branch named dev,then push to remote repository
