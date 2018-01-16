@@ -226,6 +226,12 @@ deploy_key_rsa
 
 `git config --global alias.st status`	全局配置，用`st`代替`status`
 
+去掉`--global`，那配置别名的文件存在于本仓库的`.git/config`中。
+
+全局配置的文件在用户主目录下的隐藏文件`.gitconfig`中。
+
+如果想删除别名，直接删除[alias]下对应的行即可。
+
 ## 举个栗子
 
 ### 删除文件
