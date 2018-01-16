@@ -29,27 +29,29 @@
 
 ### 创建版本库
 
-git init    创建仓库
+`git init`    创建仓库
 
-git add file	添加到git中（但没有提及到本地，只是放入暂存区）
+`git add file`	添加到git中（放入暂存区）
 
-git commit -m 'commit description'	提及修改好的文件到本地
+`git add .	`	一次性全部添加到暂存区
 
-git log	打印提交日志
+`git commit -m 'commit description'`	提交修改好的文件到本地
 
-git log —oneline	打印提及日志的简写版
+`git log`	打印提交日志
+
+`git log —oneline`	打印提交日志的简写版
 
 ### 版本管理
 
-git reset —hard HEAD^	回滚到上一个版本（HEAD代表当前版本，HEAD^代表上一个版本，HEAD^^代表上两个版本，依次类推）
+`git reset —hard HEAD^`	回滚到上一个版本（HEAD代表当前版本，HEAD^代表上一个版本，HEAD^^代表上两个版本，依次类推）
 
-git reflog	查看用户所有的提交记录
+`git reflog`	查看用户所有的提交记录
 
-git reset —hard 1231234（提交id）回滚到1231234的提交版本
+`git reset —hard 1231234（提交id`）回滚到1231234的提交版本
 
-git checkout — file 	放弃工作区中对file文件的修改,不论暂存区是否有该文件的修改记录，即该命令不会放弃暂存区的修改，**只放弃工作区的修改**
+`git checkout — file` 	放弃工作区中对file文件的修改,不论暂存区是否有该文件的修改记录，即该命令不会放弃暂存区的修改，**只放弃工作区的修改**
 
-git reset HEAD file 	放弃暂存区的内容(即放弃上一次add的内容)，退回到工作区，此时的工作区并不是最新版本，而是在最新版本的基础上用户修改过的内容
+`git reset HEAD file` 	放弃暂存区的内容(即放弃上一次add的内容)，退回到工作区，此时的工作区并不是最新版本，而是在最新版本的基础上用户修改过的内容
 
 ### 关联远程仓库
 
@@ -106,6 +108,20 @@ git reset HEAD file 	放弃暂存区的内容(即放弃上一次add的内容)，
 #### 推送
 
 `git push origin dev`	将dev分支推送到远程仓库（origin）的dev分支上
+
+### 标签管理
+
+`git tag v1.0`	新建标签
+
+`git tag`	查看标签
+
+`git show v1.0`	查看标签信息
+
+`git tag v0.9 7ff4f56`	给某次提交打上标签
+
+`git tag -a v0.9 -m "version 0.9 released" 7ff4f56` `-a`后面是标签名，`-m`后面是标签说明
+
+`git tag -d v1.0`删除标签
 
 ## 远程仓库
 
@@ -171,5 +187,5 @@ git reset HEAD file 	放弃暂存区的内容(即放弃上一次add的内容)，
 - 查看远程库信息，使用`git remote -v`；
 - 从本地推送分支，使用`git push origin branch-name`，如果推送失败，先用`git pull`抓取远程的新提交；
 - 在本地创建和远程分支对应的分支，使用`git checkout -b branch-name origin/branch-name`，本地和远程分支的名称最好一致；
-- 建立本地分支和远程分支的关联，使用`git branch --set-upstream branch-name origin/branch-name`；
+- 建立本地分支和远程分支的关联，使用`git branch --set-upstream branch-name origin/branch-name`；如果使用sourcetree，右键origin，选择检出分支，即可在本地复制远程分支。
 - 从远程抓取分支，使用`git pull`，如果有冲突，要先处理冲突。
