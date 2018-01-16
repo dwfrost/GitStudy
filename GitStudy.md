@@ -4,6 +4,10 @@
 
 从头开始复习git，熟悉git常见指令，安装，操作等
 
+参考廖雪峰的教程
+
+> https://www.liaoxuefeng.com/wiki/0013739516305929606dd18361248578c67b8067c8c017b000
+
 ## 安装
 
 ### Mac
@@ -69,6 +73,22 @@
 - 在本地仓库终端输入`git clone git@github.com:dwfrost/GitStudy.git`
 - 如果是加入已有的项目，需要检出目标分支到本地，以便推送时本地分支和远程分支同名
 
+`git remote rm origin`    删除已关联的远程仓库（一般用不到）
+
+一个本地库可以同时关联github和码云：
+
+`git remote add github git@github.com:dwfrost/GitStudy.git` 
+
+`git remote add gitee git@gitee.com:dwfrost/GitStudy.git`
+
+注意，远程仓库名称不是`origin`了
+
+然后分别推送
+
+`git push github dev`
+
+`git push gitee dev`
+
 ### 分支管理
 
 `git branch`	查看当前所在的分支
@@ -123,9 +143,13 @@
 
 `git tag -d v1.0`删除标签
 
-## 远程仓库
+`git push origin v1.0`	推送标签到远程
 
-### 关联SSH
+`git push origin --tags`	一次性推送全部标签
+
+`git push origin :refs/tags/v1.0`		删除远程标签（要先删本地）
+
+### 添加SSH
 
 常见的远程仓库有github,码云等，为了方便本地和远程提交代码，需要配置SSH加密，如下：
 
@@ -172,6 +196,35 @@
 ```
 
 另外，如果暂存区存在文件，是不能直接`pull`分支的。
+
+## 配置
+
+### .gitignore
+
+有些文件的变动或者信息是不需要提交的，比如`node_modules`、`dist`以及系统产生的垃圾文件等。示例如下：
+
+```Bash
+# Windows:
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+
+# Python:
+*.py[cod]
+*.so
+*.egg
+*.egg-info
+dist
+build
+
+# My configurations:
+db.ini
+deploy_key_rsa
+```
+
+### 配置别名
+
+`git config --global alias.st status`	全局配置，用`st`代替`status`
 
 ## 举个栗子
 
