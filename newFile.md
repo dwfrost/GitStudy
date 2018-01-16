@@ -21,3 +21,6 @@ stash again again
 abcabc
 
 new feature 
+new plan
+
+newbranch from now
