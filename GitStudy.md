@@ -90,7 +90,7 @@ git reset HEAD file 	放弃暂存区的内容(即放弃上一次add的内容)，
 
 #### 暂存
 
-`git stash`	将修改内容（stash）暂存到贮藏区
+`git stash`	将修改内容（stash）移到贮藏区
 
 `git stash list`	查看贮藏区的内容（stash）
 
