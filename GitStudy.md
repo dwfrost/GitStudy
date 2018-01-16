@@ -65,6 +65,7 @@ git reset HEAD file 	放弃暂存区的内容(即放弃上一次add的内容)，
 
 - 打开github项目，复制SSH
 - 在本地仓库终端输入`git clone git@github.com:dwfrost/GitStudy.git`
+- 如果是加入已有的项目，需要检出目标分支到本地，以便推送时本地分支和远程分支同名
 
 ### 分支管理
 
@@ -86,7 +87,9 @@ git reset HEAD file 	放弃暂存区的内容(即放弃上一次add的内容)，
 
 #### 删除
 
-`git branch -d dev`	删除dev分支(当前分支不能为dev)
+`git branch -d dev`	删除dev分支(合并后才能删除，且当前分支不能为dev)
+
+`git branch -D dev`	没有合并时，强制删除dev分支
 
 #### 暂存
 
@@ -99,6 +102,10 @@ git reset HEAD file 	放弃暂存区的内容(即放弃上一次add的内容)，
 1.`git stash apply`恢复贮藏区，但贮藏区依旧保留修改内容（stash），如果想删除，使用`git stash drop`
 
 2.`git stash pop`恢复贮藏区的同时删除修改内容（stash）
+
+#### 推送
+
+`git push origin dev`	将dev分支推送到远程仓库（origin）的dev分支上
 
 ## 远程仓库
 
@@ -158,3 +165,11 @@ git reset HEAD file 	放弃暂存区的内容(即放弃上一次add的内容)，
 - 是否真的删除？
 - 是，`git commit -m 'delete file'`
 - 否，`git reset HEAD file` + `git checkout -- file`
+
+### 多人协作
+
+- 查看远程库信息，使用`git remote -v`；
+- 从本地推送分支，使用`git push origin branch-name`，如果推送失败，先用`git pull`抓取远程的新提交；
+- 在本地创建和远程分支对应的分支，使用`git checkout -b branch-name origin/branch-name`，本地和远程分支的名称最好一致；
+- 建立本地分支和远程分支的关联，使用`git branch --set-upstream branch-name origin/branch-name`；
+- 从远程抓取分支，使用`git pull`，如果有冲突，要先处理冲突。
