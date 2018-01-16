@@ -88,6 +88,18 @@ git reset HEAD file 	放弃暂存区的内容(即放弃上一次add的内容)，
 
 `git branch -d dev`	删除dev分支(当前分支不能为dev)
 
+#### 暂存
+
+`git stash`	将修改内容（stash）暂存到贮藏区
+
+`git stash list`	查看贮藏区的内容（stash）
+
+恢复贮藏区有2种办法：
+
+1.`git stash apply`恢复贮藏区，但贮藏区依旧保留修改内容（stash），如果想删除，使用`git stash drop`
+
+2.`git stash pop`恢复贮藏区的同时删除修改内容（stash）
+
 ## 远程仓库
 
 ### 关联SSH
